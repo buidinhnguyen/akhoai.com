@@ -2,28 +2,52 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="AKhoai - Solutions & Software">
-  <main class="max-w-7xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold mb-8">Welcome to AKhoai</h1>
-    <p class="text-xl mb-12">Building innovative solutions and software.</p>
+<Layout title="AKhoai - Business Solutions & Software">
+  <!-- Hero Section -->
+  <header class="bg-slate-900 text-white py-24">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-5xl font-extrabold mb-6">AKhoai</h1>
+      <p class="text-2xl text-slate-300">Driving innovation through high-quality solutions & software.</p>
+    </div>
+  </header>
+
+  <!-- Products Section -->
+  <main class="max-w-7xl mx-auto px-4 py-20">
+    <h2 class="text-3xl font-bold text-center mb-16">Our Products</h2>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-6 border rounded-lg">
-        <h2 class="text-2xl font-semibold">Phonetik</h2>
-        <p>Learning app (iOS)</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Phonetik -->
+      <div class="p-8 border border-slate-200 rounded-2xl hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Phonetik</h3>
+        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-4">iOS</span>
+        <p class="text-slate-600">Learning application for mastering phonetics.</p>
       </div>
-      <div class="p-6 border rounded-lg">
-        <h2 class="text-2xl font-semibold">inWeek</h2>
-        <p>Productivity app (soon)</p>
+      
+      <!-- inWeek -->
+      <div class="p-8 border border-slate-200 rounded-2xl hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">inWeek</h3>
+        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mb-4">Coming Soon</span>
+        <p class="text-slate-600">Productivity application to optimize your schedule.</p>
       </div>
-      <div class="p-6 border rounded-lg">
-        <h2 class="text-2xl font-semibold">ezTerm</h2>
-        <p>Tools (soon)</p>
+      
+      <!-- ezTerm -->
+      <div class="p-8 border border-slate-200 rounded-2xl hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">ezTerm</h3>
+        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mb-4">Coming Soon</span>
+        <p class="text-slate-600">Essential tools for professional efficiency.</p>
       </div>
-      <div class="p-6 border rounded-lg">
-        <h2 class="text-2xl font-semibold">crossO</h2>
-        <p>Games (iOS & Android)</p>
+      
+      <!-- crossO -->
+      <div class="p-8 border border-slate-200 rounded-2xl hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">crossO</h3>
+        <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded mb-4">iOS & Android</span>
+        <p class="text-slate-600">Engaging games for entertainment on the go.</p>
       </div>
     </div>
   </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-50 py-12 text-center text-slate-500">
+    <p>&copy; {new Date().getFullYear()} AKhoai. All rights reserved.</p>
+  </footer>
 </Layout>
