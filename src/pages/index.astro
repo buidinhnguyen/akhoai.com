@@ -1,5 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  {
+    name: 'Learning',
+    apps: [{ name: 'Phonetik', tag: 'iOS', desc: 'Learning application for phonetics.', color: 'blue' }]
+  },
+  {
+    name: 'Productivity',
+    apps: [{ name: 'inWeek', tag: 'Coming Soon', desc: 'Productivity optimized.', color: 'green' }]
+  },
+  {
+    name: 'Tools',
+    apps: [{ name: 'ezTerm', tag: 'Coming Soon', desc: 'Essential business tools.', color: 'green' }]
+  },
+  {
+    name: 'Media & Entertainment',
+    apps: [{ name: 'crossO', tag: 'iOS & Android', desc: 'Engaging games for everyone.', color: 'purple' }]
+  }
+];
 ---
 
 <Layout title="AKHOAI - Business Solutions & Software">
@@ -12,11 +31,8 @@ import Layout from '../layouts/Layout.astro';
         <a href="#" class="hover:text-amber-500">Products</a>
         <a href="#" class="hover:text-amber-500">Contact</a>
       </nav>
-      <div class="text-gray-500">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
+      <!-- Search Removed -->
+      <div class="hidden"></div>
     </div>
   </header>
 
@@ -30,21 +46,21 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Products Section -->
   <main class="max-w-7xl mx-auto px-6 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {[
-        { name: 'Phonetik', tag: 'iOS', desc: 'Learning application for phonetics.', color: 'blue' },
-        { name: 'inWeek', tag: 'Coming Soon', desc: 'Productivity optimized.', color: 'green' },
-        { name: 'ezTerm', tag: 'Coming Soon', desc: 'Essential business tools.', color: 'green' },
-        { name: 'crossO', tag: 'iOS & Android', desc: 'Engaging games for everyone.', color: 'purple' }
-      ].map(product => (
-        <div class="bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition p-6">
-          <h3 class="text-xl font-bold mb-2">{product.name}</h3>
-          <span class={`inline-block bg-${product.color}-100 text-${product.color}-800 text-xs font-bold px-2 py-1 rounded mb-4 uppercase tracking-wider`}>{product.tag}</span>
-          <p class="text-gray-600 mb-6">{product.desc}</p>
-          <a href="#" class="block text-center border-2 border-gray-900 rounded-full py-2 font-bold hover:bg-gray-900 hover:text-white transition">Explore</a>
+    {categories.map(cat => (
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-amber-500 pl-4">{cat.name}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {cat.apps.map(product => (
+            <div class="bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition p-6">
+              <h3 class="text-xl font-bold mb-2">{product.name}</h3>
+              <span class={`inline-block bg-${product.color}-100 text-${product.color}-800 text-xs font-bold px-2 py-1 rounded mb-4 uppercase tracking-wider`}>{product.tag}</span>
+              <p class="text-gray-600 mb-6">{product.desc}</p>
+              <a href="#" class="block text-center border-2 border-gray-900 rounded-full py-2 font-bold hover:bg-gray-900 hover:text-white transition">Explore</a>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </main>
 
   <!-- Footer -->
