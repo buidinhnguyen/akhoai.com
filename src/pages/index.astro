@@ -7,7 +7,7 @@ const categories = [
     apps: [{ 
         name: 'Phonetik', 
         tag: 'iOS', 
-        desc: 'Learning application for phonetics.', 
+        desc: 'Master phonetics with interactive lessons designed for optimal learning efficiency.', 
         color: 'blue', 
         link: 'https://apps.apple.com/ng/app/phonetik/id1254802893' 
     }]
@@ -17,7 +17,7 @@ const categories = [
     apps: [{ 
         name: 'inWeek', 
         tag: 'Coming Soon', 
-        desc: 'Productivity optimized.', 
+        desc: 'Organize your schedule and tasks seamlessly with inWeek.', 
         color: 'green',
         link: '#' 
     }]
@@ -27,8 +27,8 @@ const categories = [
     apps: [{ 
         name: 'ezTerm', 
         tag: 'Coming Soon', 
-        desc: 'Essential business tools.', 
-        color: 'green',
+        desc: 'Essential business utilities at your fingertips.', 
+        color: 'teal',
         link: '#' 
     }]
   },
@@ -37,7 +37,7 @@ const categories = [
     apps: [{ 
         name: 'crossO', 
         tag: 'iOS & Android', 
-        desc: 'Engaging games for everyone.', 
+        desc: 'Classic Caro game with modern twists.', 
         color: 'purple',
         links: [
             { name: 'App Store', url: 'https://apps.apple.com/ng/app/crosso-caro-game/id6829106208' },
@@ -48,46 +48,42 @@ const categories = [
 ];
 ---
 
-<Layout title="AKHOAI - Business Solutions & Software">
-  <!-- Navigation -->
-  <header class="w-full bg-white border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="/" class="text-3xl font-bold text-gray-900 tracking-tight">AKHOAI</a>
-      <nav class="hidden md:flex space-x-8 font-bold text-sm uppercase text-gray-700">
-        <a href="#" class="hover:text-amber-500">Home</a>
-        <a href="#" class="hover:text-amber-500">Products</a>
-        <a href="#" class="hover:text-amber-500">Contact</a>
-      </nav>
-      <div class="hidden"></div>
+<Layout title="AKHOAI - Innovative App Solutions">
+  <!-- Hero Section -->
+  <header class="bg-gray-50 py-24">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-5xl font-extrabold text-gray-900 mb-6 leading-tight">Solutions for a <span class="text-amber-500">Beautiful Life</span></h1>
+        <p class="text-lg text-gray-600 mb-8">We create high-quality, intuitive applications that empower your daily life and work.</p>
+        <div class="flex space-x-4">
+          <a href="#products" class="bg-amber-500 text-white px-8 py-3 rounded-full font-bold hover:bg-amber-600 transition">Explore Apps</a>
+        </div>
+      </div>
+      <div class="bg-gray-200 aspect-square rounded-2xl flex items-center justify-center text-gray-400">
+        <!-- Placeholder for Hero Image -->
+        <span>App Showcase Illustration</span>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-blue-400 py-24 text-white text-center">
-    <div class="max-w-3xl mx-auto px-6">
-      <h1 class="text-6xl font-bold mb-4">AKHOAI Solutions</h1>
-      <p class="text-xl opacity-90">We provide many solutions for Beautiful Life.</p>
-    </div>
-  </section>
-
   <!-- Products Section -->
-  <main class="max-w-7xl mx-auto px-6 py-20">
+  <main id="products" class="max-w-6xl mx-auto px-6 py-20">
     {categories.map(cat => (
-      <div class="mb-16">
-        <h2 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-amber-500 pl-4">{cat.name}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="mb-20">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-10">{cat.name}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cat.apps.map(product => (
-            <div class="bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition p-6 flex flex-col h-full">
-              <h3 class="text-xl font-bold mb-2">{product.name}</h3>
-              <span class={`inline-block bg-${product.color}-100 text-${product.color}-800 text-xs font-bold px-2 py-1 rounded mb-4 uppercase tracking-wider`}>{product.tag}</span>
-              <p class="text-gray-600 mb-6 flex-grow">{product.desc}</p>
+            <div class="bg-white border border-gray-100 rounded-2xl shadow-sm p-8 hover:shadow-xl transition">
+              <span class={`inline-block bg-${product.color}-100 text-${product.color}-800 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider`}>{product.tag}</span>
+              <h3 class="text-2xl font-bold mb-3">{product.name}</h3>
+              <p class="text-gray-600 mb-8">{product.desc}</p>
               
-              <div class="flex flex-col gap-2">
+              <div class="flex flex-col gap-3">
                 {product.link && (
-                    <a href={product.link} target="_blank" class="block text-center border-2 border-gray-900 rounded-full py-2 font-bold hover:bg-gray-900 hover:text-white transition">Explore</a>
+                    <a href={product.link} target="_blank" class="block text-center bg-gray-900 text-white rounded-lg py-3 font-bold hover:bg-gray-700 transition">Download Now</a>
                 )}
                 {product.links && product.links.map(l => (
-                    <a href={l.url} target="_blank" class="block text-center border-2 border-gray-900 rounded-full py-2 font-bold hover:bg-gray-900 hover:text-white transition">{l.name}</a>
+                    <a href={l.url} target="_blank" class="block text-center border border-gray-300 rounded-lg py-3 font-bold hover:bg-gray-50 transition">{l.name}</a>
                 ))}
               </div>
             </div>
@@ -98,9 +94,7 @@ const categories = [
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 py-12 text-center text-sm">
-    <div class="max-w-7xl mx-auto px-6">
-      <p>&copy; {new Date().getFullYear()} AKHOAI Solutions. All rights reserved.</p>
-    </div>
+  <footer class="bg-white border-t border-gray-100 py-12 text-center text-gray-500">
+    <p>&copy; {new Date().getFullYear()} AKHOAI Solutions. All rights reserved.</p>
   </footer>
 </Layout>
