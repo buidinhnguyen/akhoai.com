@@ -41,8 +41,8 @@ const categories = [
         desc: 'Classic Caro game with modern twists.', 
         color: 'purple',
         links: [
-            { name: 'App Store', url: 'https://apps.apple.com/ng/app/crosso-caro-game/id6829106208' },
-            { name: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.akhoai.crosso' }
+            { name: 'App Store', url: 'https://apps.apple.com/ng/app/crosso-caro-game/id6829106208', icon: 'M14.7 18.2c.5 1 1 2.2 2.3 2.2 1.2 0 1.9-.7 3.3-.7 1.4 0 2 .7 3.3.7 1.3 0 1.9-1.3 2.5-2.3-.5-.2-1.3-.8-1.3-2.1 0-1.3.8-1.9 1.4-2.1-1-1.4-2.5-1.5-3-1.5-1.4 0-2.4 1-3.2 1-.8 0-2-1-3.2-1-1.3 0-2.4.7-3.1 1.7-1.3 2.1-1.3 5 0 7zM18.5 7.7c1-1.2 1.6-2.8 1.4-4.5-1.5.1-3.3 1.1-4.4 2.4-1 1.1-1.6 2.7-1.4 4.3 1.7.1 3.4-1 4.4-2.2z' },
+            { name: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.akhoai.crosso', icon: 'M3.5 2.5l9 9-9 9m9-9L20 20M13 11.5l7-7' }
         ]
     }]
   }
@@ -50,7 +50,6 @@ const categories = [
 ---
 
 <Layout title="AKHOAI - Innovative App Solutions">
-  <!-- Navigation -->
   <header class="w-full bg-white border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="/" class="flex items-center">
@@ -65,7 +64,6 @@ const categories = [
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="bg-gray-50 py-24">
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
       <div>
@@ -81,7 +79,6 @@ const categories = [
     </div>
   </section>
 
-  <!-- Products Section -->
   <main id="products" class="max-w-6xl mx-auto px-6 py-20">
     {categories.map(cat => (
       <div class="mb-20">
@@ -98,7 +95,12 @@ const categories = [
                     <a href={product.link} target="_blank" class="block text-center bg-gray-900 text-white rounded-lg py-3 font-bold hover:bg-gray-700 transition">Download Now</a>
                 )}
                 {product.links && product.links.map(l => (
-                    <a href={l.url} target="_blank" class="block text-center border border-gray-300 rounded-lg py-3 font-bold hover:bg-gray-50 transition">{l.name}</a>
+                    <a href={l.url} target="_blank" class="flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-3 font-bold hover:bg-gray-50 transition">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                           <path d={l.icon} />
+                        </svg>
+                        {l.name}
+                    </a>
                 ))}
               </div>
             </div>
@@ -108,7 +110,6 @@ const categories = [
     ))}
   </main>
 
-  <!-- Footer -->
   <footer class="bg-white border-t border-gray-100 py-12 text-center text-gray-500">
     <p>&copy; {new Date().getFullYear()} AKHOAI Solutions. All rights reserved.</p>
   </footer>
